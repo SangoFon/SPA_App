@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Service Update</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+{#        {% for error in form.title.errors %}#}
+{#        <span style="color: red;">[{{ error }}]</span>#}
+{#        {% endfor %}#}
+        {% from "_formhelpers.html" import render_field %}
+            <dl>
+                {{ render_field(form.update_rooms) }}
+            </dl>
+                {{ form.cost.label }}
+                {{ form.cost(size=32)}}
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+
+

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Cancellations:</h1>
+<table border="1" cellpadding=3>
+    <tr>
+        <th>Customer Name</th>
+        <th>Responsible Party</th>
+{#        <th>Service</th>#}
+{#        <th>Assistant</th>#}
+        <th>Date</th>
+{#        <th>Time</th>#}
+        <th>Cost</th>
+    </tr>
+{% for meeting in meetings %}
+    <tr>
+        <td>{{ meeting.title }}</td>
+        <td>{{ meeting.group}}</td>
+{#        <td>{{ meeting.room}}</td>#}
+{#        <td>{{ meeting.booker}}</td>#}
+        <td>{{ meeting.date}}</td>
+{#        <td>{{ meeting.time}}</td>#}
+        <td>{{ meeting.cost }}</td>
+    </tr>
+{% endfor %}
+</table>
+    <button  onclick="javascript:window.print()" class="btn-print">Print</button>
+{% endblock %}

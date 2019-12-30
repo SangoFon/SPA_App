@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+{% if current_user.is_anonymous %}
+<h1>Hi, Welcome to MIYE!</h1>
+{% else %}
+<style>
+          a{
+              color:black;
+              position:center;
+          }
+          div{
+               background-image: url({{ url_for('static', filename='img/MIYE1.PNG') }});
+               background-repeat: no-repeat;
+               background-size: 100% 100%;
+          }
+</style>
+
+<div>
+    <h1>Hi, {{ current_user.username }}!</h1>
+    <form method="get" action="{{ url_for('book')}}"><button type="submit">New Reservation &nbsp&nbsp   </button></form>
+    <form method="get" action="{{ url_for('cancelbooking')}}"><button type="submit">Cancel Reservation</button></form>
+    <form method="get" action="{{ url_for('roomavailable')}}"><button type="submit">Service Availability</button></form>
+    <form method="get" action="{{ url_for('roomoccupation')}}"><button type="submit">Service Status &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </button></form>
+    <form method="get" action="{{ url_for('meetingbooker')}}"><button type="submit">All Reservationss &nbsp&nbsp</button></form>
+    <form method="get" action="{{ url_for('cancellist')}}"><button type="submit">All Cancellations &nbsp&nbsp</button></form>
+    <form method="get" action="{{ url_for('meetingparticipants')}}"><button type="submit">Individual Bill &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  </button></form>
+    <form method="get" action="{{ url_for('costs')}}"><button type="submit">Group Bill  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    </button></form>
+    <form method="get" action="{{ url_for('addteam')}}"><button type="submit"> Add Group &nbsp&nbsp&nbsp&nbsp</button></form>
+    <form method="get" action="{{ url_for('adduser')}}"><button type="submit">Add Member    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button></form>
+    <form method="get" action="{{ url_for('deleteuser')}}"><button type="submit">Delete Member  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    </button></form>
+    <form method="get" action="{{ url_for('updateservice')}}"><button type="submit">Update Service  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    </button></form>
+</div>
+{% endif %}
+{% endblock %}

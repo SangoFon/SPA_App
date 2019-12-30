@@ -1,0 +1,10 @@
+============================= test session starts =============================
+platform win32 -- Python 3.7.5, pytest-5.2.2, py-1.8.0, pluggy-0.13.0
+rootdir: C:\Users\admin\Desktop\ch1\test-env
+collected 0 items / 1 errors
+
+=================================== ERRORS ====================================
+_________________ ERROR collecting test_fixtures_BCE_11_3.py __________________
+lib\\site-packages\\_pytest\\python.py:501: in _importtestmodule\n    mod = self.fspath.pyimport(ensuresyspath=importmode)\nlib\\site-packages\\py\\_path\\local.py:701: in pyimport\n    __import__(modname)\n<frozen importlib._bootstrap>:983: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:967: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:677: in _load_unlocked\n    ???\nlib\\site-packages\\_pytest\\assertion\\rewrite.py:133: in exec_module\n    source_stat, co = _rewrite_test(fn, self.config)\nlib\\site-packages\\_pytest\\assertion\\rewrite.py:282: in _rewrite_test\n    tree = ast.parse(source, filename=fn)\n..\\..\\..\\AppData\\Local\\Programs\\Python\\Python37\\lib\\ast.py:35: in parse\n    return compile(source, filename, mode, PyCF_ONLY_AST)\nE     File "C:\\Users\\admin\\Desktop\\ch1\\test-env\\test_fixtures_BCE_11_3.py", line 8\nE       \u200b    start = time.time()\nE       ^\nE   SyntaxError: invalid character in identifier
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 errors during collection !!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.15s ===============================

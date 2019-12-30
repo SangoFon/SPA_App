@@ -1,0 +1,73 @@
+<html>
+    <head>
+      <title>MIYE Reservation System</title>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <script>
+      $(function() {
+          $( ".dtpick" ).datepicker();
+      });
+      </script>
+      <style>
+          .nav{
+              background:saddlebrown;
+              height:65px;
+          }
+
+          a{
+              color:white;
+          }
+
+          body{
+              background-color: tan;
+          }
+      </style>
+  
+    </head>
+    <body>
+
+        <div class="nav">
+            <a href="{{ url_for('index') }}">Home </a><a> &nbsp </a>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}">Login</a><a> &nbsp </a>
+            {% else %}
+            <a href="{{ url_for('logout')}}">Logout</a><a> &nbsp </a>
+            {% endif %}
+            <a href="{{ url_for('book')}}">New Reservation</a><a> &nbsp </a>
+            <a href="{{ url_for('cancelbooking')}}">Cancel Reservation</a><a> &nbsp </a>
+            <a href="{{ url_for('roomavailable')}}">Service Availability</a><a> &nbsp </a>
+            <a href="{{ url_for('roomoccupation')}}">Service Status</a><a> &nbsp </a>
+            <a href="{{ url_for('reservationreport')}}">Reservation Report</a><a> &nbsp </a>
+            <a href="{{ url_for('cancellationreport')}}">Cancellation Report</a><a> &nbsp </a>
+            <br>
+            <a href="{{ url_for('meetingbooker')}}">All Reservations</a><a> &nbsp </a>
+            <a href="{{ url_for('cancellist')}}">All Cancellations</a><a> &nbsp </a>
+            <a href="{{ url_for('meetingparticipants')}}">Individual Bill</a><a> &nbsp </a>
+            <a href="{{ url_for('costs')}}">Group Bill</a><a> &nbsp </a>
+            <a href="{{ url_for('addteam')}}">Responsible Party </a><a> &nbsp </a>
+            <a href="{{ url_for('adduser')}}">Add Member</a><a> &nbsp </a>
+            <a href="{{ url_for('deleteteam')}}"></a><a> &nbsp </a>
+            <a href="{{ url_for('deleteuser')}}">Delete Member</a><a> &nbsp </a>
+            <a href="{{ url_for('updateservice')}}">Update Service</a><a> &nbsp </a>
+            {% if current_user.is_authenticated %}
+            <div align="left" color="white">User: {{current_user.fullname}}</div>
+            {% endif %}
+        </div>
+        
+
+        <hr>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+
+    </body>
+</html>

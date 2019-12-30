@@ -1,0 +1,22 @@
+============================= test session starts =============================
+platform win32 -- Python 3.7.5, pytest-5.2.2, py-1.8.0, pluggy-0.13.0 -- c:\users\admin\desktop\ch1\test-env\scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\admin\Desktop\ch1\test-env
+collecting ... collected 1 item
+
+test_fixtures_BCE_11_3.py::test_some_turple FAILED                       [100%]
+
+================================== FAILURES ===================================
+______________________________ test_some_turple _______________________________
+
+some_turple = (1, None, {'age': 27})
+
+    def test_some_turple(some_turple):
+    
+>       assert some_turple[2]['age'] == 42
+E       assert 27 == 42
+E         -27
+E         +42
+
+test_fixtures_BCE_11_3.py:12: AssertionError
+============================== 1 failed in 0.05s ==============================

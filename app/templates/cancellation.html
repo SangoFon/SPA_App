@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Cancellation Report</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {% from "_formhelpers.html" import render_field %}
+                <dl>
+                {{ render_field(form.rooms) }}
+                </dl>
+{#                {{ form.date(class="dtpick") }}#}
+{#                {% for error in form.date.errors %}#}
+{#                <span style="color: red;">[{{ error }}]</span>#}
+{#                {% endfor %}#}
+{#            <dl>#}
+{#                {{ render_field(form.startTime) }}#}
+{#                {{ render_field(form.duration)}}#}
+{#            </dl>#}
+                {{ form.startdate.label}}
+                {{ form.startdate(class="dtpick") }}
+                {% for error in form.startdate.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                {{ form.enddate.label}}
+                {{ form.enddate(class="dtpick") }}
+                {% for error in form.enddate.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

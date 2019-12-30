@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.5, pytest-5.2.2, py-1.8.0, pluggy-0.13.0 -- /Users/mini/venv/pytest_exercises/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/mini/venv/code/ch2/tasks_proj/tests, inifile: pytest.ini
+collecting ... collected 10 items
+
+test_api_exceptions.py::TestAdd::test_add_task PASSED                    [ 10%]
+test_api_exceptions.py::TestAdd::test_add_summary PASSED                 [ 20%]
+test_api_exceptions.py::TestAdd::test_add_owner PASSED                   [ 30%]
+test_api_exceptions.py::test_list_raises PASSED                          [ 40%]
+test_api_exceptions.py::test_get_raises PASSED                           [ 50%]
+test_api_exceptions.py::TestUpdate::test_bad_id PASSED                   [ 60%]
+test_api_exceptions.py::TestUpdate::test_bad_task PASSED                 [ 70%]
+test_api_exceptions.py::test_delete_raises PASSED                        [ 80%]
+test_api_exceptions.py::TestStart::test_start_tasks_db_path PASSED       [ 90%]
+test_api_exceptions.py::TestStart::test_start_tasks_db_type PASSED       [100%]
+
+=============================== warnings summary ===============================
+/Users/mini/venv/pytest_exercises/lib/python3.7/site-packages/_pytest/mark/structures.py:325
+  /Users/mini/venv/pytest_exercises/lib/python3.7/site-packages/_pytest/mark/structures.py:325: PytestUnknownMarkWarning: Unknown pytest.mark.smoke - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/latest/mark.html
+    PytestUnknownMarkWarning,
+
+/Users/mini/venv/pytest_exercises/lib/python3.7/site-packages/_pytest/mark/structures.py:325
+  /Users/mini/venv/pytest_exercises/lib/python3.7/site-packages/_pytest/mark/structures.py:325: PytestUnknownMarkWarning: Unknown pytest.mark.get - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/latest/mark.html
+    PytestUnknownMarkWarning,
+
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+======================== 10 passed, 2 warnings in 0.03s ========================

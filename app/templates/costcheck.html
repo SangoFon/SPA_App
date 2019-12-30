@@ -1,0 +1,30 @@
+{#{% extends "base.html" %}#}
+{##}
+{#{% block content %}#}
+{#    <h1>Check Accrued Costs</h1>#}
+{#    <form action="" method="post">#}
+{#        {{ form.hidden_tag() }}#}
+{#                {{ form.group.label}}#}
+{#                {{ form.group() }}#}
+{#                {% for error in form.startdate.errors %}#}
+{#                <span style="color: red;">[{{ error }}]</span>#}
+{#                {% endfor %}#}
+{##}
+{#        #}
+{#        <p>{{ form.submit() }}</p>#}
+{#    </form>#}
+{#{% endblock %}#}
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Check Group Costs</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {% from "_formhelpers.html" import render_field %}
+        <dl>
+                {{ render_field(form.ids) }}
+        </dl>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

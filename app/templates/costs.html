@@ -1,0 +1,39 @@
+{#{% extends "base.html" %}#}
+{##}
+{#{% block content %}#}
+{#<h1>Costs accrued by group:  {{group}}:</h1>#}
+{#<table border="1" cellpadding=3>#}
+{#    <tr>#}
+{#        <th>Group</th>#}
+{#        <th>Cost Accrued</th>#}
+{#    </tr>#}
+{#{% for teamcost in teamcosts %}#}
+{#    <tr>#}
+{#        <td>{{ teamcost.group }}</td>#}
+{#        <td>{{ teamcost.total }}</td> #}
+{#    </tr>#}
+{#{% endfor %}#}
+{#</table>#}
+{#{% endblock %}#}
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Group Bills</h1>
+
+<table border="1" cellpadding=3>
+    <tr>
+        <th>Responsible Party</th>
+        <th>Total Cost </th>
+        <th>Team Member</th>
+    </tr>
+{% for teamcost in teamcosts %}
+    <tr>
+        <td>{{ teamcost.group }}</td>
+        <td>{{ teamcost.total }}</td>
+        <td>{{ teamcost.member}}</td>
+    </tr>
+{% endfor %}
+
+</table>
+    <button  onclick="javascript:window.print()" class="btn-print">Print</button>
+{% endblock %}

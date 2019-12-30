@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Customer Name: {{meetingtitle}}</h1>
+
+{% for part in participants %}
+    <span>{{part}}</span><br>
+
+{% endfor %}
+<button  onclick="javascript:window.print()" class="btn-print">Print</button>
+{% endblock %}

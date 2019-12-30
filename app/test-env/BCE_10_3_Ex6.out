@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.4, pytest-5.2.2, py-1.8.0, pluggy-0.13.0 -- /Users/air/venv/pytest_exercises/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/air/venv/code/ch2/tasks_proj/tests, inifile: pytest.ini
+collecting ... collected 1 item
+
+test_count_BCE_10_3.py::test_count PASSED                                [100%]
+
+============================== 1 passed in 0.05s ===============================

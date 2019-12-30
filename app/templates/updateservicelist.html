@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Service detail</h1>
+{#            <dl>#}
+{#                {{ render_field(form.new_rooms) }}#}
+{#                {{ render_field(form.update_rooms) }}#}
+{#            </dl>#}
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+{#        {% for error in form.title.errors %}#}
+{#        <span style="color: red;">[{{ error }}]</span>#}
+{#        {% endfor %}#}
+        {% from "_formhelpers.html" import render_field %}
+               <table border="1" cellpadding=3>
+                   <tr>
+                       <th>Service</th>
+                       <th>Price(dollar/minute)</th>
+                   </tr>
+                   {% for room in allrooms %}
+                       <tr>
+                           <td>{{ room.roomName }}</td>
+                           <td>{{ room.cost}}</td>
+                       </tr>
+                   {% endfor %}
+               </table>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

@@ -1,0 +1,79 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.4, pytest-5.2.2, py-1.8.0, pluggy-0.13.0 -- /Users/air/venv/pytest_exercises/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/air/venv/code/ch2/tasks_proj/tests, inifile: pytest.ini
+collecting ... collected 50 items
+
+func/test_add.py::test_add_returns_valid_id PASSED                       [  2%]
+func/test_add.py::test_added_task_has_id_set PASSED                      [  4%]
+func/test_add_variety.py::test_add_1 PASSED                              [  6%]
+func/test_add_variety.py::test_add_2[task0] PASSED                       [  8%]
+func/test_add_variety.py::test_add_2[task1] PASSED                       [ 10%]
+func/test_add_variety.py::test_add_2[task2] PASSED                       [ 12%]
+func/test_add_variety.py::test_add_2[task3] PASSED                       [ 14%]
+func/test_add_variety.py::test_add_3[sleep-None-False] PASSED            [ 16%]
+func/test_add_variety.py::test_add_3[wake-brian-False] PASSED            [ 18%]
+func/test_add_variety.py::test_add_3[breathe-BRIAN-True] PASSED          [ 20%]
+func/test_add_variety.py::test_add_3[eat eggs-BrIaN-False] PASSED        [ 22%]
+func/test_add_variety.py::test_add_4[task0] PASSED                       [ 24%]
+func/test_add_variety.py::test_add_4[task1] PASSED                       [ 26%]
+func/test_add_variety.py::test_add_4[task2] PASSED                       [ 28%]
+func/test_add_variety.py::test_add_4[task3] PASSED                       [ 30%]
+func/test_add_variety.py::test_add_4[task4] PASSED                       [ 32%]
+func/test_add_variety.py::test_add_5[Task(sleep,None,True)] PASSED       [ 34%]
+func/test_add_variety.py::test_add_5[Task(wake,brian,False)0] PASSED     [ 36%]
+func/test_add_variety.py::test_add_5[Task(wake,brian,False)1] PASSED     [ 38%]
+func/test_add_variety.py::test_add_5[Task(breathe,BRIAN,True)] PASSED    [ 40%]
+func/test_add_variety.py::test_add_5[Task(exercise,BrIaN,False)] PASSED  [ 42%]
+func/test_add_variety.py::test_add_6[just summary] PASSED                [ 44%]
+func/test_add_variety.py::test_add_6[summary/owner] PASSED               [ 46%]
+func/test_add_variety.py::test_add_6[summary/owner/done] PASSED          [ 48%]
+func/test_add_variety.py::TestAdd::test_equivalent[Task(sleep,None,True)] PASSED [ 50%]
+func/test_add_variety.py::TestAdd::test_equivalent[Task(wake,brian,False)0] PASSED [ 52%]
+func/test_add_variety.py::TestAdd::test_equivalent[Task(wake,brian,False)1] PASSED [ 54%]
+func/test_add_variety.py::TestAdd::test_equivalent[Task(breathe,BRIAN,True)] PASSED [ 56%]
+func/test_add_variety.py::TestAdd::test_equivalent[Task(exercise,BrIaN,False)] PASSED [ 58%]
+func/test_add_variety.py::TestAdd::test_valid_id[Task(sleep,None,True)] PASSED [ 60%]
+func/test_add_variety.py::TestAdd::test_valid_id[Task(wake,brian,False)0] PASSED [ 62%]
+func/test_add_variety.py::TestAdd::test_valid_id[Task(wake,brian,False)1] PASSED [ 64%]
+func/test_add_variety.py::TestAdd::test_valid_id[Task(breathe,BRIAN,True)] PASSED [ 66%]
+func/test_add_variety.py::TestAdd::test_valid_id[Task(exercise,BrIaN,False)] PASSED [ 68%]
+func/test_api_exceptions.py::test_add_raises PASSED                      [ 70%]
+func/test_api_exceptions.py::test_list_raises PASSED                     [ 72%]
+func/test_api_exceptions.py::test_get_raises PASSED                      [ 74%]
+func/test_api_exceptions.py::TestUpdate::test_bad_id PASSED              [ 76%]
+func/test_api_exceptions.py::TestUpdate::test_bad_task PASSED            [ 78%]
+func/test_api_exceptions.py::test_delete_raises PASSED                   [ 80%]
+func/test_api_exceptions.py::test_start_tasks_db_raises PASSED           [ 82%]
+func/test_unique_id_1.py::test_unique_id FAILED                          [ 84%]
+func/test_unique_id_2.py::test_unique_id_1 SKIPPED                       [ 86%]
+func/test_unique_id_2.py::test_unique_id_2 PASSED                        [ 88%]
+func/test_unique_id_3.py::test_unique_id_1 SKIPPED                       [ 90%]
+func/test_unique_id_3.py::test_unique_id_2 PASSED                        [ 92%]
+func/test_unique_id_4.py::test_unique_id_1 XFAIL                         [ 94%]
+func/test_unique_id_4.py::test_unique_id_is_a_duck XFAIL                 [ 96%]
+func/test_unique_id_4.py::test_unique_id_not_a_duck XPASS                [ 98%]
+func/test_unique_id_4.py::test_unique_id_2 PASSED                        [100%]
+
+=================================== FAILURES ===================================
+________________________________ test_unique_id ________________________________
+
+    def test_unique_id():
+        """Calling unique_id() twice should return different numbers."""
+        id_1 = tasks.unique_id()
+        id_2 = tasks.unique_id()
+>       assert id_1 != id_2
+E       assert 1 != 1
+
+func/test_unique_id_1.py:11: AssertionError
+=============================== warnings summary ===============================
+/Users/air/venv/pytest_exercises/lib/python3.7/site-packages/_pytest/mark/structures.py:325
+  /Users/air/venv/pytest_exercises/lib/python3.7/site-packages/_pytest/mark/structures.py:325: PytestUnknownMarkWarning: Unknown pytest.mark.smoke - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/latest/mark.html
+    PytestUnknownMarkWarning,
+
+/Users/air/venv/pytest_exercises/lib/python3.7/site-packages/_pytest/mark/structures.py:325
+  /Users/air/venv/pytest_exercises/lib/python3.7/site-packages/_pytest/mark/structures.py:325: PytestUnknownMarkWarning: Unknown pytest.mark.get - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/latest/mark.html
+    PytestUnknownMarkWarning,
+
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+== 1 failed, 44 passed, 2 skipped, 2 xfailed, 1 xpassed, 2 warnings in 0.46s ===

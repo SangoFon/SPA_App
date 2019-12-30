@@ -1,0 +1,46 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.4, pytest-5.2.2, py-1.8.0, pluggy-0.13.0 -- /Users/air/venv/pytest_exercises/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/air/venv/code/ch2/tasks_proj/tests, inifile: pytest.ini
+collecting ... collected 2 items
+
+test_task_fail.py::test_task_equality FAILED                             [ 50%]
+test_task_fail.py::test_dict_equality FAILED                             [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_task_equality ______________________________
+
+    def test_task_equality():
+        """Different tasks should not be equal."""
+        t1 = Task('sit there', 'brian')
+        t2 = Task('do something', 'okken')
+>       assert t1 == t2
+E       AssertionError: assert Task(summary=...alse, id=None) == Task(summary=...alse, id=None)
+E         At index 0 diff: 'sit there' != 'do something'
+E         Full diff:
+E         - Task(summary='sit there', owner='brian', done=False, id=None)
+E         ?                ^^^  ^^^          ^^^^
+E         + Task(summary='do something', owner='okken', done=False, id=None)
+E         ?               +++ ^^^  ^^^          ^^^^
+
+test_task_fail.py:9: AssertionError
+______________________________ test_dict_equality ______________________________
+
+    def test_dict_equality():
+        """Different tasks compared as dicts should not be equal."""
+        t1_dict = Task('make sandwich', 'okken')._asdict()
+        t2_dict = Task('make sandwich', 'okkem')._asdict()
+>       assert t1_dict == t2_dict
+E       AssertionError: assert OrderedDict([...('id', None)]) == OrderedDict([...('id', None)])
+E         Omitting 3 identical items, use -vv to show
+E         Differing items:
+E         {'owner': 'okken'} != {'owner': 'okkem'}
+E         Full diff:
+E         OrderedDict([('summary', 'make sandwich'),
+E         -              ('owner', 'okken'),
+E         ?                             ^...
+E         
+E         ...Full output truncated (5 lines hidden), use '-vv' to show
+
+test_task_fail.py:16: AssertionError
+============================== 2 failed in 0.06s ===============================
